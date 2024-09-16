@@ -1,0 +1,27 @@
+.placeOrderWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.placeOrderWrapper svg {
+    color: rgb(8, 196, 8);
+    font-size: 40px;
+}
+
+.placeOrderBtn {
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    background: linear-gradient(#25291C, #989C94);
+    text-decoration: none;
+}
+
+.orderPlaced {
+    margin: 20px 0;
+    font-size: 30px;
+}

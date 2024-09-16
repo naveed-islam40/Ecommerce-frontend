@@ -1,0 +1,65 @@
+.adminproductParent {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-height: 100vh;
+    padding: 40px 30px;
+}
+
+.adminproductimg {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.adminproductWrapper {
+    transition: 0.5s;
+    height: 500px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.adminproductWrapper:hover {
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.29);
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.29);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.29);
+    transform: translateY(-20px);
+}
+
+.adminProductBtn {
+    display: flex;
+    gap: 30px;
+}
+
+.adminProductBtn button {
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+}
+
+.adminProductBtn button:first-child {
+    background: #53DD6C;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.adminProductBtn button:last-child {
+    background: #C42021;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.adminProductBtn button:first-child:hover {
+    background: #1aca3b;
+}
+
+.adminProductBtn button:last-child:hover {
+    background: #a71919;
+}

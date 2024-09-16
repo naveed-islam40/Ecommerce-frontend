@@ -1,0 +1,13 @@
+.updateHeading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.updateHeading h1 {
+    font-size: 3.3vw;
+}
+
+#updateProfile h1 {
+    font-size: 30px;
+}

@@ -1,0 +1,19 @@
+.feedbacksubmitWrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+    text-align: center;
+}
+
+.feedbacksubmitWrapper svg {
+    color: rgb(12, 207, 12);
+    font-size: 50px;
+    margin: 20px 0;
+}
+
+.feedbacksubmitWrapper h1 {
+    font-size: 25px;
+    font-weight: 500;
+}

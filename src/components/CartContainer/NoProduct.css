@@ -1,0 +1,26 @@
+.noProductWrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.noProductWrapper svg {
+    font-size: 100px;
+    color: tomato;
+}
+
+.noProductWrapper h1 {
+    margin: 20px 0;
+}
+
+.noProductWrapper a {
+    font-size: 30px;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(#25291C, #989C94);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}

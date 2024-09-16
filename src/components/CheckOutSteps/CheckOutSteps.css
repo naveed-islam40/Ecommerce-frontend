@@ -1,0 +1,14 @@
+.MuiStepper-alternativeLabel {
+    width: 100vw;
+    background-color: #64646431;
+}
+
+.MuiStepConnetor-root {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.39);
+}
+
+.MuiStepConnetor.active,
+.MuiStepConnetor.completed {
+    background-color: tomato;
+}

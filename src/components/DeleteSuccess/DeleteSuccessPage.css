@@ -1,0 +1,33 @@
+.delete-success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.success-icon {
+    font-size: 64px;
+    color: green;
+    margin-bottom: 20px;
+}
+
+.success-message {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.dummy-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background: linear-gradient(#00B295, #03F7EB);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dummy-button:hover {
+    background-color: #0056b3;
+}

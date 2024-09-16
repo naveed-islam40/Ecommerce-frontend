@@ -1,0 +1,31 @@
+.userDel-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    padding: 20px;
+}
+
+.userDel-info {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userDel-info img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.userDel-info h3 {
+    margin: 20px 0;
+}
+
+.userDel-info h4 {
+    margin: 20px 0;
+    font-size: 20px;
+}

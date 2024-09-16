@@ -1,0 +1,54 @@
+.orderStatus_container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.orderStatus_container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.update-status-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.order-id {
+    margin-bottom: 15px;
+}
+
+.order-status {
+    margin: 40px 0;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+}
+
+.order-status select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button.dashboard-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.dashboard-btn:hover {
+    background-color: #0056b3;
+}

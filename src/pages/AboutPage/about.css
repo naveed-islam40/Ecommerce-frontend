@@ -1,0 +1,79 @@
+.contentSection div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 50px;
+}
+
+.contentSection div .contentText {
+    width: 50%;
+}
+
+.contentSection div .contentText p {
+    font-size: 18px;
+}
+
+.contentSection div .contentImg img {
+    width: 300px;
+}
+
+.contentSection div .contentImg img:first-child {
+    width: 200px;
+}
+
+.aboutHeading {
+    text-align: center;
+    margin-top: 30px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.329);
+    width: max-content;
+}
+
+@media screen and (max-width: 1000px) {
+    .contentSection div .contentText {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .contentSection div .contentText {
+        width: 100%;
+        padding: 0;
+    }
+
+    .contentSection div {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    .contentSection div {
+        padding: 30px 20px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .contentSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contentSection div {
+        flex-direction: column;
+        width: 400px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contentSection div {
+        width: 300px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .contentSection div .contentText p {
+        font-size: 15px;
+    }
+
+}

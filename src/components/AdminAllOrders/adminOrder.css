@@ -1,0 +1,86 @@
+.adminOrdersParent {
+    min-height: 100vh;
+    padding: 0 100px;
+    margin-top: 20px;
+}
+
+.adminOrderParent {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.adminOrdertopbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    background-color: #FFE6E8;
+    justify-items: center;
+}
+
+.adminOrdertopbar p {
+    margin-top: 10px;
+}
+
+.adminOrderWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    margin-top: 20px;
+}
+
+.adminOrderWrapper img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.orderStatusBtn {
+    border: 0;
+    outline: 0;
+    background: linear-gradient(#00B295, #03F7EB);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .adminOrdersParent {
+        padding: 0 50px;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .adminOrdersParent {
+        padding: 0;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .adminOrdertopbar {
+        display: none;
+    }
+
+    .adminOrdersParent {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .adminOrderParent {
+        width: 300px;
+        height: 400px;
+    }
+
+    .adminOrderWrapper {
+        flex-direction: column;
+    }
+
+    .adminOrderWrapper img {
+        height: 200px;
+        width: 200px;
+    }
+}

@@ -1,0 +1,25 @@
+.unauth {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.unauth p {
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.unauth svg {
+    font-size: 60px;
+    color: yellow;
+}
+
+.goProductPage {
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    background: linear-gradient(#00B295, #03F7EB);
+}

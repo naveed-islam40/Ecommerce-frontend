@@ -1,0 +1,44 @@
+.deleteProductParent {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.productDetail {
+    margin-top: 20px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.46);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.46);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.46);
+    transition: 0.5s;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.productDetail:hover {
+    transform: translateY(-20px);
+}
+
+.deleteImgPic {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+
+}
+
+.delBtn {
+    display: flex;
+    justify-content: center;
+}
+
+.delBtn button {
+    width: 200px;
+}
+
+.delContent {
+    margin-left: 20px;
+    margin-top: 10px;
+}

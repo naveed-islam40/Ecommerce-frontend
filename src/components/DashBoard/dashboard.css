@@ -1,0 +1,102 @@
+.dashBoradParentWrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+}
+
+.sidebarContainer {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    background-color: #CFE8EF;
+    border-radius: 5px;
+}
+
+.dashboardCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboardCardWrapper {
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.28);
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.28);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.28);
+    width: 250px;
+    height: 20vh;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.dashboardCardContent {
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.carddesc {
+    font-size: 30px;
+}
+
+.dashboardCardIcon {
+    font-size: 35px;
+}
+
+.dashBoardContainer {
+    text-align: center;
+}
+
+.dashboard {
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.dashBoardSummeryParent {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dashboardSummeryBox2 {
+    display: flex;
+    gap: 20px;
+}
+
+
+.lineChart {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.sidebarWrapper {
+    width: 70vw;
+}
+
+.DoughnutChart {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.myLogo {
+    text-align: center;
+}
+
+.myLogo img {
+    width: 150px;
+}
+
+.sidebarItems {
+    margin-left: 20px;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 930px) {}
