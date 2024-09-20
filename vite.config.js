@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": "http://localhost:3000",
+      "/api": "https://ecommerce-backend-c405q1cfy-naveed-islams-projects-77b7560f.vercel.app",
     },
   },
   optimizeDeps: {
