@@ -13,7 +13,7 @@ export const contactUsAction = (email, message) =>
       });
       const userData = { email, message };
       const config = { headers: { "Content-Type": "application/json" } };
-      const { data } = await axios.post(`/api/contact/page`, userData, config);
+      const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/contact/page`, userData, config);
 
       dispatch({
         type: CONTACTUS_SUCCESS,

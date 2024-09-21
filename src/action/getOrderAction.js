@@ -20,7 +20,7 @@ export const getOrder = () =>
     try {
       dispatch({ type: GET_ORDER_REQUEST });
 
-      const { data } = await axios.post(`/api/order/user`);
+      const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/order/user`);
 
       dispatch({
         type: GET_ORDER_SUCCESS,
@@ -40,7 +40,7 @@ export const getOrderDetails = (id) =>
     try {
       dispatch({ type: ORDER_DETAIL_REQUEST });
 
-      const { data } = await axios.get(`/api/order/${id}`);
+      const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/order/${id}`);
 
       dispatch({
         type: ORDER_DETAIL_SUCCESS,
@@ -70,7 +70,7 @@ export const orderFeedbackAction = (productId, comment, rating) =>
         rating,
       };
 
-      const { data } = await axios.put(`/api/review`, feedbackData, config);
+      const { data } = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/review`, feedbackData, config);
 
       dispatch({
         type: FEEDBACK_SUCCESS,
@@ -95,7 +95,7 @@ export const orderStatusChangeAction = (orderId, Orderstatus) =>
 
       dispatch({ type: CHANGE_ORDERSTATUS_REQUEST });
 
-      const { data } = await axios.put(`/api/order/update/${orderId}`, status);
+      const { data } = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/order/update/${orderId}`, status);
 
       dispatch({
         type: CHANGE_ORDERSTATUS_SUCCESS,

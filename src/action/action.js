@@ -20,10 +20,10 @@ export const getProduct = (
     try {
       dispatch({ type: ALL_PRODUCTS_REQUEST });
 
-      let link = `${process.env.REACT_APP_BACKEND_URL}/api/products?keyword=${keyword}&page=${currentPage}&price[gte]=${priceRange[0]}&price[lte]=${priceRange[1]}&ratings[gte]=${rating}`;
+      let link = `${import.meta.env.VITE_BACKEND_URL}/api/products?keyword=${keyword}&page=${currentPage}&price[gte]=${priceRange[0]}&price[lte]=${priceRange[1]}&ratings[gte]=${rating}`;
 
       if (category) {
-        link = `${process.env.REACT_APP_BACKEND_URL}/api/products?keyword=${keyword}&page=${currentPage}&price[gte]=${priceRange[0]}&price[lte]=${priceRange[1]}&catagory=${category}&ratings[gte]=${rating}`;
+        link = `${import.meta.env.VITE_BACKEND_URL}/api/products?keyword=${keyword}&page=${currentPage}&price[gte]=${priceRange[0]}&price[lte]=${priceRange[1]}&catagory=${category}&ratings[gte]=${rating}`;
       }
 
       const { data } = await axios.get(link);
@@ -45,7 +45,7 @@ export const getProductData = (productId) =>
     try {
       dispatch({ type: PRODUCT_DETAIL_REQUEST });
 
-      const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/product/${productId}`);
+      const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/product/${productId}`);
 
       dispatch({
         type: PRODUCT_DETAIL_SUCCESS,

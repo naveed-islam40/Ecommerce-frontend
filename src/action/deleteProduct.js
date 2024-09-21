@@ -10,7 +10,7 @@ export const deleteProduct = (productId) => async (dispatch) => {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
 
     const { data } = await axios.delete(
-      `/api/admin/deleteProduct/${productId}`
+      `${import.meta.env.VITE_BACKEND_URL}/api/admin/deleteProduct/${productId}`
     );
 
     dispatch({ type: DELETE_PRODUCT_SUCCESS, payload: data.success });

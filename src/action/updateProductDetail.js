@@ -10,7 +10,7 @@ export const updateProductAction = (id, formData) =>
     try {
       dispatch({ type: UPDATE_PRODUCT_REQUEST });
       const { data } = await axios.patch(
-        `/api/admin/updateProduct/${id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/admin/updateProduct/${id}`,
         formData
       );
 

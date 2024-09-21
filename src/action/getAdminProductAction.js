@@ -14,7 +14,7 @@ export const fetchProductsAndFilterByAdmin = () => {
       dispatch({
         type: ADMIN_PRODUCT_REQUEST,
       });
-      const { data } = await axios.get("/api/products/admin");
+      const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/products/admin`);
 
       dispatch({
         type: ADMIN_PRODUCT_SUCCESS,
@@ -36,7 +36,7 @@ export const AdminAllOrders = () => {
       dispatch({
         type: ALL_ORDERS_REQUEST,
       });
-      const { data } = await axios.post("/api/order/All");
+      const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/order/All`);
 
       console.log(data)
 

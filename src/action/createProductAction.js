@@ -12,7 +12,7 @@ export const createProduct = (formData) => async (dispatch) => {
       type: CREATE_PRODUCT_REQUEST,
     });
 
-    const { data } = await axios.post("/api/admin/createProduct", formData);
+    const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/admin/createProduct`, formData);
 
     dispatch({ type: CREATE_PRODUCT_SUCCESS, payload: data });
   } catch (error) {

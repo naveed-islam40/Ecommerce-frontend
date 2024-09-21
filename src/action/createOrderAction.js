@@ -17,7 +17,7 @@ export const createOrder = (order) =>
           "Content-Type": "application/json",
         },
       };
-      const { data } = await axios.post("/api/create/new", order, config);
+      const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/create/new`, order, config);
 
       dispatch({ type: CREATE_ORDER_SUCCESS, payload: data });
     } catch (error) {
