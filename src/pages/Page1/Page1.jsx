@@ -9,7 +9,7 @@ const Main = () => {
       <div className="mainWrapper">
         <h3>Welcome to E-COMMERCE</h3>
         <h1>FIND AMAZING PRODUCT BELOW</h1>
-        <a href="#Home">
+        <a href="#Home" className="scrolll">
           Scroll <CiDesktopMouse2 />
         </a>
       </div>

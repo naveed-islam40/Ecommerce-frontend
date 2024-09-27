@@ -43,3 +43,10 @@
 .mainWrapper h1 {
     margin: 20px 0;
 }
+
+.scrolll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
