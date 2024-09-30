@@ -12,4 +12,9 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["country-state-picker"],
   },
+  resolve: {
+    alias: {
+      'shadcn-ui': 'shadcn-ui/dist',
+    },
+  },
 });

@@ -42,6 +42,7 @@ import UpdateProduct from "./components/UpdateProduct/UpdateProduct";
 import UpdateOrderStatus from "./components/UpdateOrderStatus/UpdateOrderStatus";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import ContactUs from "./components/ContactUs/ContactUs";
+import ProfessionalSignUp from "./components/signup/Signup";
 
 const stripeApiKey =
   "pk_test_51OxS7lHpkdGlyPOh2nmwBNaoUVYIwAxSYdEvbbvVBkd1IQvsPjPnCQkHmCdcAtNNMgP0AGKTkaMBfk9kBkNFxAbF00xOROjAQG";
@@ -70,7 +71,8 @@ const App = () => {
         <Route path="/Products" element={<Products />} />
         <Route path="/Products/:keyword" element={<Products />} />
         <Route path="/Search" element={<Search />} />
-        <Route path="/signup" element={<LoginSignup />} />
+        <Route path="/signin" element={<LoginSignup />} />
+        <Route path="/signup" element={<ProfessionalSignUp />} />
         <Route path="/account" element={<Profile />} />
         <Route path="/About" element={<AboutPage />} />
         <Route path="/Contact" element={<ContactUs />} />
