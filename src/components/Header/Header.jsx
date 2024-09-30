@@ -35,7 +35,7 @@ const option = {
   cartIconUrl: "/cart",
   profileIcon: "true",
   ProfileIconElement: MdOutlineAccountBox,
-  profileIconUrl: "/signup",
+  profileIconUrl: "/signin",
   searchIconMargin: "0 20px",
   cartIconMargin: "0 20px 0 0",
   searchIconColor: "#242321",
