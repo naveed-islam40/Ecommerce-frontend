@@ -15,10 +15,10 @@ const Main = () => {
           </h1>
           <p className="text-xl sm:text-2xl mb-8 text-gray-200">FIND AMAZING PRODUCTS BELOW</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#shop" className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded transition duration-300 no-underline">
+            <Link to="/products" className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded transition duration-300 no-underline">
               Shop Now
             </Link>
-            <Link href="#about" className="bg-transparent hover:bg-white/10 text-white font-bold py-3 px-6 rounded border-2 border-white transition duration-300 no-underline">
+            <Link to="/About" className="bg-transparent hover:bg-white/10 text-white font-bold py-3 px-6 rounded border-2 border-white transition duration-300 no-underline">
               Learn More
             </Link>
           </div>

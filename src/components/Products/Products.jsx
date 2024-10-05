@@ -1,24 +1,20 @@
-import React, { Fragment, useEffect, useState } from "react";
-import "./products.css";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { getProduct, clearError } from "../../action/action";
 import Loader from "../Loader/Loader";
 import Product from "../Product/Product";
-import { useParams } from "react-router-dom";
 import Pagination from "react-js-pagination";
-import Slider from '@mui/material/Slider';
-import Typography from '@mui/material/Typography';
-import { toast, Bounce } from "react-toastify";
+import { Slider, Typography } from '@mui/material';
+import { toast } from "react-toastify";
 import MetaData from "../MetaData";
 import toastify from "../../toastify/toastify";
 
-let categories = ["Clothing", "Shoes", "Jewelry", "Watches", "Bags", "Phones"];
+const categories = ["Clothing", "Shoes", "Jewelry", "Watches", "Bags", "Phones"];
 
-const Products = () => {
+export default function Products() {
   const dispatch = useDispatch();
-  const { products, loading, error, productsCount, currentProducts } =
-    useSelector((state) => state.products);
-
+  const { products, loading, error, productsCount, currentProducts } = useSelector((state) => state.products);
   const { cartItems } = useSelector((state) => state.cart);
 
   const [category, setCategory] = useState("");
@@ -33,100 +29,96 @@ const Products = () => {
       dispatch(clearError());
     }
     dispatch(getProduct(keyword, currentPage, priceRange, category, rating));
-  }, [dispatch, keyword, currentPage, priceRange, category, rating]);
+  }, [dispatch, keyword, currentPage, priceRange, category, rating, error]);
 
-  // setCurrentPageNo
-  const setCurrentPageNo = (e) => {
-    setCurrentPage(e);
-  };
-
-  //priceHandler
   const handleChangePrice = (event, newValue) => {
     setPriceRange(newValue);
   };
 
   return (
-    <Fragment>
-      <MetaData title="PRODUCTS --E-COMMERCE" />
-      <div className="heading">
-        <h1>Products</h1>
+    <div className="min-h-screen bg-gray-100">
+      <MetaData title="Products | E-Commerce" />
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Products</h1>
+
+        {loading ? (
+          <Loader />
+        ) : (
+          <div className="flex flex-col md:flex-row">
+            <div className="md:w-1/4 mb-8 md:mb-0 md:pr-8">
+              <div className="bg-white rounded-lg shadow-md p-6">
+                <Typography variant="h6" gutterBottom>Filters</Typography>
+                <div className="mb-6">
+                  <Typography id="range-slider" gutterBottom>
+                    Price Range
+                  </Typography>
+                  <Slider
+                    value={priceRange}
+                    onChange={handleChangePrice}
+                    valueLabelDisplay="auto"
+                    min={0}
+                    max={200}
+                    marks
+                    step={10}
+                  />
+                </div>
+                <div className="mb-6">
+                  <Typography gutterBottom>Category</Typography>
+                  <ul className="space-y-2">
+                    {categories.map((cat) => (
+                      <li
+                        key={cat}
+                        onClick={() => setCategory(cat)}
+                        className={`cursor-pointer hover:text-blue-600 ${
+                          category === cat ? 'text-blue-600 font-semibold' : 'text-gray-600'
+                        }`}
+                      >
+                        {cat}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <Typography component="legend" gutterBottom>Ratings Above</Typography>
+                  <Slider
+                    value={rating}
+                    onChange={(e, newRating) => setRating(newRating)}
+                    aria-labelledby="continuous-slider"
+                    valueLabelDisplay="auto"
+                    min={0}
+                    max={5}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="md:w-3/4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {products.map((product, index) => (
+                  <Product key={index} product={product} cartItems={cartItems} />
+                ))}
+              </div>
+              {productsCount > 8 && (
+                <div className="mt-8 flex justify-center">
+                  <Pagination
+                    activePage={currentPage}
+                    itemsCountPerPage={currentProducts}
+                    totalItemsCount={productsCount}
+                    onChange={(page) => setCurrentPage(page)}
+                    nextPageText="Next"
+                    prevPageText="Prev"
+                    firstPageText="First"
+                    lastPageText="Last"
+                    itemClass="inline-block mx-1"
+                    linkClass="px-3 py-2 rounded-md bg-white text-gray-700 hover:bg-blue-500 hover:text-white transition-colors duration-200"
+                    activeClass="bg-blue-500 text-white"
+                    activeLinkClass="bg-blue-500 text-white"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
-
-      {loading ? (
-        <Loader />
-      ) : (
-        <div className="products-mainContainer">
-          <div className="paginationProducts">
-            {products.map((product, index) => (
-              <Product product={product} key={index} cartItems={cartItems} />
-            ))}
-          </div>
-
-          <div className="price-slider">
-            {/* Price Filter */}
-            <Typography id="range-slider" gutterBottom>
-              Price Range
-            </Typography>
-            <Slider
-              value={priceRange}
-              onChange={handleChangePrice}
-              valueLabelDisplay="auto"
-              min={0}
-              max={200}
-              marks
-              step={10}
-            />
-
-            {/* category Filter */}
-            <Typography>Category</Typography>
-            <ul className="categoryBox">
-              {categories.map((category) => (
-                <li
-                  className="categoryLink"
-                  key={category}
-                  onClick={() => setCategory(category)}
-                >
-                  {category}
-                </li>
-              ))}
-            </ul>
-
-            {/* {ratings filtered} */}
-            <fieldset>
-              <Typography component="legend">Ratings Above</Typography>
-              <Slider
-                value={rating}
-                onChange={(e, newRating) => setRating(newRating)}
-                aria-labelledby="continuous-slider"
-                valueLabelDisplay="auto"
-                min={0}
-                max={5}
-              />
-            </fieldset>
-          </div>
-
-          <div className="pagination">
-            {currentProducts < productsCount && (
-              <Pagination
-                activePage={currentPage}
-                totalItemsCount={productsCount || 4}
-                itemsCountPerPage={currentProducts}
-                onChange={setCurrentPageNo}
-                nextPageText="Next"
-                prevPageText="Pre"
-                firstPageText="1st"
-                lastPageText="Last"
-                itemClass="page-item"
-                linkClass="page-link"
-                activeClass="pageItemActive"
-                activeLinkClass="pagelinkActive"
-              />
-            )}
-          </div>
-        </div>
-      )}
-    </Fragment>
+    </div>
   );
-};
-
-export default Products;
+}

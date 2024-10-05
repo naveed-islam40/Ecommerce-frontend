@@ -31,6 +31,8 @@ const Payment = () => {
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const { error } = useSelector((state) => state.createOrder);
 
+  console.log(cartItems)
+
   const orderInfo = JSON.parse(sessionStorage.getItem("priceInfo"));
 
   const paymentData = {

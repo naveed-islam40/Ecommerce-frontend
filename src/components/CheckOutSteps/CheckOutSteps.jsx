@@ -25,6 +25,7 @@ const CheckOutSteps = ({ activeSteps }) => {
   ];
   const stepsStyles = {
     boxSizing: "border-box",
+    backgroundColor: "#F3F4F6"
   };
   const iconStyle = {
     fontSize: "25px",

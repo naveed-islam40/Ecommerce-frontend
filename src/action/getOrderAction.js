@@ -15,12 +15,17 @@ import {
 } from "../constants/getOrderConstants";
 import axios from "axios";
 
-export const getOrder = () =>
+export const getOrder = (formData) =>
   async function (dispatch) {
     try {
       dispatch({ type: GET_ORDER_REQUEST });
 
-      const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/order/user`);
+      const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/order/user`,
+        formData,
+         {withCredentials: true}
+        );
+
+        console.log(data)
 
       dispatch({
         type: GET_ORDER_SUCCESS,
@@ -40,7 +45,12 @@ export const getOrderDetails = (id) =>
     try {
       dispatch({ type: ORDER_DETAIL_REQUEST });
 
-      const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/order/${id}`);
+      const config = {
+        headers: { "Content-Type": "application/json" }
+      }
+      const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/order/${id}`,
+        {withCredentials: true}
+      );
 
       dispatch({
         type: ORDER_DETAIL_SUCCESS,
@@ -70,7 +80,7 @@ export const orderFeedbackAction = (productId, comment, rating) =>
         rating,
       };
 
-      const { data } = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/review`, feedbackData, config);
+      const { data } = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/review`, feedbackData, {withCredentials: true},  config);
 
       dispatch({
         type: FEEDBACK_SUCCESS,
@@ -95,7 +105,10 @@ export const orderStatusChangeAction = (orderId, Orderstatus) =>
 
       dispatch({ type: CHANGE_ORDERSTATUS_REQUEST });
 
-      const { data } = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/order/update/${orderId}`, status);
+      const { data } = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/order/update/${orderId}`, 
+        status,
+      {withCredentials: true}
+      );
 
       dispatch({
         type: CHANGE_ORDERSTATUS_SUCCESS,

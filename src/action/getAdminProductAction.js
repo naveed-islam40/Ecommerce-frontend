@@ -36,7 +36,12 @@ export const AdminAllOrders = () => {
       dispatch({
         type: ALL_ORDERS_REQUEST,
       });
-      const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/order/All`);
+      const config = {
+        headers: {
+          "Content-Type": "application/json"
+        },
+      }
+      const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/order/All`, config, {withCredentials: true});
 
       console.log(data)
 

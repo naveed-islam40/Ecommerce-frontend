@@ -128,11 +128,10 @@ export const updateUser = (userData) =>
   async function (dispatch) {
     try {
       dispatch({ type: UPDATE_PROFILE_REQUEST });
-      const config = { headers: { "Content-Type": "multipart/form-data" } };
       const { data } = await axios.put(
         `${import.meta.env.VITE_BACKEND_URL}/api/me/updatedetails`,
         userData,
-        config
+        {withCredentials: true}
       );
 
       dispatch({
@@ -153,7 +152,7 @@ export const updatePassword = (password) =>
   async function (dispatch) {
     try {
       dispatch({ type: PASSWORD_UPDATE_REQUEST });
-      const config = { headers: { "Content-Type": "application/json" } };
+      const config = { withCredentials: true };
       const { data } = await axios.put(
         `${import.meta.env.VITE_BACKEND_URL}/api/me/updatepassword`,
         password,
